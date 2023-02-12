@@ -1,4 +1,4 @@
-name: scp files
+name: Publish to Remote Repository
 on: [push]
 jobs:
   build:
