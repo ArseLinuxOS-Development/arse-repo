@@ -13,5 +13,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         port: 22
-        source: "*"
+        source: "arselinux/x86_64/pkg.tar.zst"
         target: "/var/www/repo/"
