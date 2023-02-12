@@ -1,0 +1,38 @@
+# Maintainer: Sébastien Luttringer
+# Contributor: Tom Gundersen <teg@jklm.no>
+
+pkgname=arse-release
+pkgver=2023.02.12
+pkgrel=1
+pkgdesc='Base Arse Linux files'
+arch=('x86_64')
+license=('GPL')
+url='https://arselinux.org'
+depends=('iana-etc')
+source=('os-release' 'arselinux-logo.png')
+sha256sums=('edaffba67b9dcad2b4f6a33c2e690c69d71d89c8450a50d63ce13ec13d0c123c'
+            '9217f6e61c6359aae866f236f07c86aabd5b126fdafefce4340a80357f0604d7')
+
+package() {
+  cd "$pkgdir"
+
+  # setup root filesystem
+  for d in boot dev etc home mnt usr var opt srv/http run; do
+    install -d -m755 $d
+  done
+  install -d -m555 proc
+  install -d -m555 sys
+  install -d -m0750 root
+  install -d -m1777 tmp
+
+  touch etc/arch-release
+  install -Dm644 "$srcdir"/os-release usr/lib/os-release
+  install -D -m644 "$srcdir"/arselinux-logo{.png,.svg,-text.svg,-text-dark.svg} usr/share/pixmaps
+
+  # setup /usr hierarchy
+  for d in bin include lib share/{misc,pixmaps} src; do
+    install -d -m755 usr/$d
+  done
+}
+
+# vim:set ts=2 sw=2 et:
