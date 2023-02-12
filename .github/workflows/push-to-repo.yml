@@ -13,7 +13,7 @@ jobs:
       with:
         target-server: 139.162.212.24
         remote-user: root
-        private-ssh-key: ${{ secrets.ARSEREPOSSHKEY }}
+        private-ssh-key: ${{ secrets.SSH_KEY }}
         destination-path: /var/www/repo/
         ssh-port: 22
         rsync-options: --dry-run --archive --verbose --compress --delete-after --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
