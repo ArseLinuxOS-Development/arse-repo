@@ -1,0 +1,26 @@
+# Maintainer: ArseLinuxOS-Team
+
+pkgname=arse-hooks
+pkgver=1.0
+pkgrel=1
+pkgdesc='ArseLinuxOS pacman hooks'
+arch=('any')
+license=('GPL3')
+depends=(libnotify)
+
+source=('arse-lsb-release.hook' 'arse-os-release.hook' 'arse-hooks-runner' 'arse-hooks.hook' )
+
+sha512sums=('bad3ff063e272d64c4a308164fc98b1099e73a148c434d957dd7b3602655597afb31a5c3bfdfee707b993ffb4f2deed824fc2e2f9b052eb623680c19397688bf'
+            'feaac725085b37e35c3602346be2f643f5eca7ea3e0450b2e08906c21d88a3be4db5ff279fb02fdf8cb18bb20e31842452bc348c0650519c7fdae7c9a66163ac'
+            '46d4e45329b5d7882f32ed7151ee15a42f058fa53697ba39ef0bbaf00d14f9fad380c286a54d871f133d91c99a5d6a13a181d3229f29476d90ca43046f1e2a9b'
+            '3342de8ce34bfd44d8818d38dc81a87491df8661a890b341129e5f9b941432d2b34dab922ca53f8a19331cc4312e1d52eb5c4c692739f0731cc88b4b7ab08703')
+
+package() {
+  local hooks=$pkgdir/usr/share/libalpm/hooks
+  local bin=$pkgdir/usr/bin
+
+  install -Dm644 arse-lsb-release.hook      $hooks/arse-lsb-release.hook
+  install -Dm644 arse-os-release.hook       $hooks/arse-os-release.hook
+  install -Dm644 ${pkgname}.hook           $hooks/${pkgname}.hook
+  install -Dm755 ${pkgname}-runner         $bin/${pkgname}-runner
+}
