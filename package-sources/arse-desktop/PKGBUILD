@@ -1,8 +1,8 @@
 # Maintainer: ArseLinuxOS-Team
 
 pkgname=arse-desktop
-pkgver=0.2
-pkgrel=2
+pkgver=0.3
+pkgrel=1
 pkgdesc='ArseLinuxOS configuration files for the desktop'
 arch=('any')
 license=('GPL3')
