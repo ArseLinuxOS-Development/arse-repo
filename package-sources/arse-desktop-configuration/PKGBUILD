@@ -14,8 +14,8 @@ sha512sums=('dbe4aa2931bbc98b8916e52e57c54be55f934cef580ba89b9d4180c08abf49cdb0d
             '5eb5361a23d2fdb8b3b438d1a5a0c5f7955944dbc52a43fdbe2ed81704a11ac4d46d235127db7f2fe24046f3c1f43e7b54edd2cddca84eb39adfb4c65fbb55f9')
 
 package() {
-  local i3=$pkgdir/home/live/.config/i3
-  local polybar=$pkgdir/home/live/.config/polybar
+  local i3=$pkgdir/root/.config/i3
+  local polybar=$pkgdir/root/.config/polybar
 
   install -Dm644 i3-config      $i3/config
   install -Dm644 polybar-config $polybar/config
