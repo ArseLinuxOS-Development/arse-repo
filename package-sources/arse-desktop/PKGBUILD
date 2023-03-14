@@ -1,12 +1,12 @@
 # Maintainer: ArseLinuxOS-Team
 
 pkgname=arse-desktop
-pkgver=0.3
+pkgver=0.4
 pkgrel=1
 pkgdesc='ArseLinuxOS configuration files for the desktop'
 arch=('any')
 license=('GPL3')
-depends=(i3-wm polybar)
+depends=(i3-wm polybar rofi)
 
 source=('i3-config' 'polybar-config')
 
@@ -17,7 +17,13 @@ package() {
   local i3=$pkgdir/root/.config/i3
   local polybar=$pkgdir/root/.config/polybar
 
+  local i3Skel=$pkgdir/etc/skel/.config/i3
+  local polybarSkel=$pkgdir/etc/skel/.config/polybar
+
   install -Dm644 i3-config      $i3/config
   install -Dm644 polybar-config $polybar/config
+  install -Dm644 i3-config      $i3Skel/config
+  install -Dm644 polybar-config $polybarSkel/config
+
 
 }
