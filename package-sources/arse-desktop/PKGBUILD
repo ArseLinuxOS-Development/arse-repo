@@ -2,7 +2,7 @@
 
 pkgname=arse-desktop
 pkgver=0.5
-pkgrel=1
+pkgrel=2
 pkgdesc='ArseLinuxOS configuration files for the desktop'
 arch=('any')
 license=('GPL3')
@@ -10,7 +10,7 @@ depends=(i3-wm polybar rofi)
 
 source=('i3-config' 'polybar-config' 'xinitrc')
 
-sha512sums=('dbe4aa2931bbc98b8916e52e57c54be55f934cef580ba89b9d4180c08abf49cdb0d11c2c13d975d88a14fc5ab79fc2698f8c12c8bb1c4c5b7d3c323c9f9cdf26'
+sha512sums=('2e784f870e649f2d0ffb185bcd80c20af6640edbc16a5d8992348700a812539b7e72246382bf8e3432f8471d06b70c4e1dbea50a42e3b897ce039a12297be067'
             '5eb5361a23d2fdb8b3b438d1a5a0c5f7955944dbc52a43fdbe2ed81704a11ac4d46d235127db7f2fe24046f3c1f43e7b54edd2cddca84eb39adfb4c65fbb55f9'
             '41243453ec711eddb974e2e225a9fe51696d54b34fa07ab21f8eff76ef09ec6f82cf3d64579a542a1ff0ff2736b158c3b2328fe1ca7d0260f4b8ea22dac45c0f')
 
