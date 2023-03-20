@@ -2,7 +2,7 @@
 
 pkgname=arse-desktop
 pkgver=0.6
-pkgrel=1
+pkgrel=2
 pkgdesc='ArseLinuxOS configuration files for the desktop'
 arch=('any')
 license=('GPL3')
@@ -31,7 +31,7 @@ package() {
   install -Dm644 i3-config      $i3Skel/config
   install -Dm644 polybar-config $polybarSkel/config
   install -Dm644 xinitrc        $xinitrc/.xinitrc
-  install -Dm644 wallpaper      $wallpaper/wallpaper
+  install -Dm644 wallpaper      $wallpaper/wallpaper.jpg
 
 
 }
