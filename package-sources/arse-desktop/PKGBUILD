@@ -1,33 +1,37 @@
 # Maintainer: ArseLinuxOS-Team
 
 pkgname=arse-desktop
-pkgver=0.5
-pkgrel=3
+pkgver=0.6
+pkgrel=1
 pkgdesc='ArseLinuxOS configuration files for the desktop'
 arch=('any')
 license=('GPL3')
 depends=(i3-wm polybar rofi)
 
-source=('i3-config' 'polybar-config' 'xinitrc')
+source=('i3-config' 'polybar-config' 'xinitrc' 'wallpaper')
 
 sha512sums=('2e784f870e649f2d0ffb185bcd80c20af6640edbc16a5d8992348700a812539b7e72246382bf8e3432f8471d06b70c4e1dbea50a42e3b897ce039a12297be067'
             '5eb5361a23d2fdb8b3b438d1a5a0c5f7955944dbc52a43fdbe2ed81704a11ac4d46d235127db7f2fe24046f3c1f43e7b54edd2cddca84eb39adfb4c65fbb55f9'
-            '41243453ec711eddb974e2e225a9fe51696d54b34fa07ab21f8eff76ef09ec6f82cf3d64579a542a1ff0ff2736b158c3b2328fe1ca7d0260f4b8ea22dac45c0f')
+            '41243453ec711eddb974e2e225a9fe51696d54b34fa07ab21f8eff76ef09ec6f82cf3d64579a542a1ff0ff2736b158c3b2328fe1ca7d0260f4b8ea22dac45c0f'
+            'fd39e1b1e675ba382007f8c0909af74cfab6573a1cddd8e67c736e36d3b75ee5b911735c27e637c5cfe1a68650edfbed8e7157cb47ddd437d40283111861e70c')
 
 package() {
   local i3=$pkgdir/root/.config/i3
   local polybar=$pkgdir/root/.config/polybar
   local xinitrc=$pkgdir/root/
+  local wallpaper=$pkgdir/root/Pictures/
 
   local i3Skel=$pkgdir/etc/skel/.config/i3
   local polybarSkel=$pkgdir/etc/skel/.config/polybar
   local xinitrc=$pkgdir/etc/skel/
+  local wallpaper=$pkgdir/etc/skel/Pictures/
 
   install -Dm644 i3-config      $i3/config
   install -Dm644 polybar-config $polybar/config
   install -Dm644 i3-config      $i3Skel/config
   install -Dm644 polybar-config $polybarSkel/config
   install -Dm644 xinitrc        $xinitrc/.xinitrc
+  install -Dm644 wallpaper      $wallpaper/wallpaper
 
 
 }
