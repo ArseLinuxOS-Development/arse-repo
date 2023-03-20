@@ -2,7 +2,7 @@
 
 pkgname=arse-desktop
 pkgver=0.5
-pkgrel=2
+pkgrel=3
 pkgdesc='ArseLinuxOS configuration files for the desktop'
 arch=('any')
 license=('GPL3')
@@ -27,7 +27,7 @@ package() {
   install -Dm644 polybar-config $polybar/config
   install -Dm644 i3-config      $i3Skel/config
   install -Dm644 polybar-config $polybarSkel/config
-  install -Dm644 xinitrc        $xinitrc/config
+  install -Dm644 xinitrc        $xinitrc/.xinitrc
 
 
 }
