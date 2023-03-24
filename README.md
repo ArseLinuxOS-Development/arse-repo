@@ -5,4 +5,4 @@ Repository for the custom arse packages
 
 
 ## Online repository 
-http://repo.arselinux.org/repo
+http://repo.arselinux.org/repo/arselinux/x86_64/
