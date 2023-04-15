@@ -642,7 +642,7 @@ EOF
 pacstrap /mnt yay i3-wm i3lock rofi polybar xorg xorg-xdm xorg-xinit xorg-fonts ttf-dejavu rsync alacritty python-pip arse-hooks picom python-pywal feh bat exa lsd dust duf broot fd ripgrep choose sd zoxide fzf mcfly 
 arch-chroot /mnt /bin/pip install --no-input hyfetch
 
-arch-chroot /mnt /bin/yay -S sanoid --noconfirm
+#arch-chroot /mnt /bin/yay -S sanoid --noconfirm
 
 
 
