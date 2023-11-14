@@ -1,18 +1,29 @@
-# arse-repo
+# Arse Repository
+
 [![Publish to Remote Repository](https://github.com/ArseLinuxOS-Development/arse-repo/actions/workflows/push-to-repo.yml/badge.svg?branch=main)](https://github.com/ArseLinuxOS-Development/arse-repo/actions/workflows/push-to-repo.yml)
 
-Repository for the custom arse packages
+A collection of custom packages for Arse Linux OS.
 
+## Online Repository
 
-## Online repository 
-http://repo.arselinux.org/repo/arselinux/x86_64/
+Repository: [Arse Linux Repo](http://repo.arselinux.org/repo/arselinux/x86_64/)
 
+## Contributing Packages
 
-## Contributing packages
-1. Make changes including bumping the version in PKGBUILD
-2. Run `updpkgsums`
-3. Build package with `makepkg -sicfr`
-4. Move new package to `/arselinux/x86_64/`
-5. `repo-add arse-repo.db.tar.zst PACKAGE_NAME`
-6. Push changes to the repository
-7. Github Workflow will push the changes to the repository. 
+1. Create your package directory inside the `package-sources` folder.
+2. Copy your package script to the root of the repository: `cp package-builder.sh ../`
+3. Build your package using Docker with the following instructions:
+
+### Docker
+
+Build the Docker image:
+
+```bash
+docker build -t arse-package-builder .
+```
+
+Run the Docker container to build your package (replace PACKAGE-DIRECTORY with your actual directory):
+
+```bash
+docker run -v "$(pwd):/usr/src/app" arse-package-builder package-sources/PACKAGE-DIRECTORY
+```
